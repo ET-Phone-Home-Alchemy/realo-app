@@ -5,6 +5,10 @@ const app = require('../lib/app');
 
 describe('realo-app-backend routes', () => {
   beforeEach(() => {
-    return pool.query(fs.readFileSync('./sql/setup.sql', 'utf-8'))
+    return pool.query(fs.readFileSync('./sql/setup.sql', 'utf-8'));
+  });
+
+  it('', () => {
+    expect(true).toEqual(true);
   });
 });
