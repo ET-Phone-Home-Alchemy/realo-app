@@ -1,6 +1,7 @@
 const request = require('request');
 const cheerio = require('cheerio');
 const fs = require('fs');
+
 const pool = require('../lib/utils/pool.js');
 const Listing = require('../lib/models/Listing.js');
 
@@ -14,6 +15,7 @@ request(searchLink, (error, response, html) => {
 
     const timeStamp = new Date();
 
+
     $('.list-card').each((i, element) => {
       const price = $(element)
         .find('.list-card-price')
@@ -24,7 +26,7 @@ request(searchLink, (error, response, html) => {
         .find('.list-card-details li:nth-child(1)')
         .text()
         .replace(/\D/g, '') || null;
-
+      
       const bath = $(element)
         .find('.list-card-details li:nth-child(2)')
         .text()
@@ -63,9 +65,7 @@ request(searchLink, (error, response, html) => {
       };
 
       Listing.insert(listing);
-
 });
-
     console.log('Scraping Done...');
   }
 });
