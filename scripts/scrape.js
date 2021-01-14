@@ -1,7 +1,6 @@
 const request = require('request');
 const cheerio = require('cheerio');
 const fs = require('fs');
-
 const pool = require('../lib/utils/pool.js');
 const Listing = require('../lib/models/Listing.js');
 
@@ -14,7 +13,6 @@ request(searchLink, (error, response, html) => {
     const $ = cheerio.load(html);
 
     const timeStamp = new Date();
-
 
     $('.list-card').each((i, element) => {
       const price = $(element)
