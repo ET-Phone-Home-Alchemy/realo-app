@@ -24,7 +24,7 @@ request(searchLink, (error, response, html) => {
         .find('.list-card-details li:nth-child(1)')
         .text()
         .replace(/\D/g, '') || null;
-
+      
       const bath = $(element)
         .find('.list-card-details li:nth-child(2)')
         .text()
@@ -63,9 +63,7 @@ request(searchLink, (error, response, html) => {
       };
 
       Listing.insert(listing);
-
 });
-
     console.log('Scraping Done...');
   }
 });
