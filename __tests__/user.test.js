@@ -19,7 +19,7 @@ describe('realo-app-backend routes', () => {
         email: 'test@test.com',
         password: 'password',
         name: 'Jon Arbuckle',
-        phoneNumber: 1235671234,
+        phoneNumber: '1235671234',
         carrier: 'att'
       });
 
@@ -27,7 +27,7 @@ describe('realo-app-backend routes', () => {
       userId: expect.any(String),
       email: 'test@test.com',
       name: 'Jon Arbuckle',
-      phoneNumber: 1235671234,
+      phoneNumber: '1235671234',
       carrier: 'att'
     });
   });
