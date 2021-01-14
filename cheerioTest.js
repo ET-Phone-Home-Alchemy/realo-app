@@ -7,33 +7,43 @@ request('https://www.zillow.com/portland-or/', (error, response, html) => {
   if(!error && response.statusCode == 200) {
     const $ = cheerio.load(html);
 
-    $('.list-card-info').each((i, element) => {
+    $('.list-card').each((i, element) => {
       const price = $(element)
         .find('.list-card-price')
-        .text();
+        .text()
+        .replace(/\D/g, '');
 
       const bed = $(element)
         .find('.list-card-details li:nth-child(1)')
         .text()
-        .match(/^[0-9]/gm);
+        .replace(/\D/g, '');
 
       const bath = $(element)
         .find('.list-card-details li:nth-child(2)')
         .text()
-        .match(/^[0-9]/gm);
+        .replace(/\D/g, '');
 
       const sqft = $(element)
         .find('.list-card-details li:nth-child(3)')
         .text()
-        .match(/[0-9]/g)
-        .join('');
+        .replace(/\D/g, '');
 
       const address = $(element)
         .find('.list-card-addr')
         .text();
 
+      const zipcode = address.substring(address.length - 5, address.length);
+
+      const link = $(element)
+        .find('a')
+        .attr('href');
+
+      const zpid = $(element)
+        .attr('id')
+        .replace(/\D/g, '');
+
       // Write Row To CSV
-      writeStream.write(`${price}, ${bed}, ${bath}, ${sqft}, ${address} \n`);
+      writeStream.write(`${price}, ${bed}, ${bath}, ${sqft}, ${address}, ${zipcode}, ${link}, ${zpid} \n`);
     });
 
     console.log('Scraping Done...');
