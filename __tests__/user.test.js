@@ -23,13 +23,13 @@ describe('realo-app-backend routes', () => {
         carrier: 'att'
       });
 
-      expect(res.body).toEqual({
-        userId: expect.any(String),
-        email: 'test@test.com',
-        name: 'Jon Arbuckle',
-        phoneNumber: 1235671234,
-        carrier: 'att'
-      });
+    expect(res.body).toEqual({
+      userId: expect.any(String),
+      email: 'test@test.com',
+      name: 'Jon Arbuckle',
+      phoneNumber: 1235671234,
+      carrier: 'att'
+    });
   });
 
 
