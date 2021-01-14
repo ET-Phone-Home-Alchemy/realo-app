@@ -8,7 +8,7 @@ describe('realo-app-backend routes', () => {
     return pool.query(fs.readFileSync('./sql/setup.sql', 'utf-8'));
   });
 
-  it('/POST allowing user to sign up', async() => {
+  it.skip('/POST allowing user to sign up', async() => {
     const res = await request(app)
       .post('/api/v1/auth/signup')
       .send({

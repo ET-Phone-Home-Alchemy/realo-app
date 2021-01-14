@@ -5,12 +5,12 @@ const app = require('../lib/app');
 
 describe('realo-app-backend routes', () => {
   beforeEach(() => {
-    return pool.query(fs.readFileSync('./sql/setup.sql', 'utf-8'));
+    return pool.query(fs.readFileSync('./sql/auth.sql', 'utf-8'));
   });
 
   afterAll(() => {
     pool.end();
-  })
+  });
 
   it('/POST allowing user to sign up', async() => {
     const res = await request(app)
