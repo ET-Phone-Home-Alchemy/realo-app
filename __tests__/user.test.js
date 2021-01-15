@@ -37,17 +37,16 @@ describe('realo-app-backend routes', () => {
   });
 
 
-  it('lets a user login', async() => {
-
+  it('lets a user login on /POST', async() => {
     const user = await UserService.create({
-      email: 'test@test.com',
+      email: 'test1@test.com',
       password: 'password',
       name: 'Joan Arbuckle',
       phoneNumber: '1235679876',
       carrier: 'att' 
     }); 
 
-    const res = await agent
+    const res = await request(app)
       .post('/api/v1/auth/login')
       .send({
         email: 'test1@test.com',
@@ -55,8 +54,11 @@ describe('realo-app-backend routes', () => {
       });
 
     expect(res.body).toEqual({
-      userId: user.id,
-      email: 'test@test.com'
+      userId: user.userId,
+      email: 'test1@test.com',
+      name: 'Joan Arbuckle',
+      phoneNumber: '1235679876',
+      carrier: 'att' 
     });
   });
 
