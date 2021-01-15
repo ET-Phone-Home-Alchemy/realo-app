@@ -61,6 +61,4 @@ describe('realo-app-backend routes', () => {
       carrier: 'att' 
     });
   });
-
-
 });
