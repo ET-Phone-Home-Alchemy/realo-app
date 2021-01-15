@@ -41,7 +41,7 @@ for(page = 1; page <= 20; page++){
           .replace(/\D/g, '') || null;
 
         const address = $(element)
-          .find('.list-card-addr')
+          .find('.list-card- addr')
           .text();
 
         const link = $(element)
