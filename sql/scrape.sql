@@ -5,9 +5,9 @@ CREATE TABLE listings(
 	source TEXT NOT NULL,
 	address TEXT NOT NULL,
 	link TEXT NOT NULL,
-	price INTEGER,
-	square_feet INTEGER,
-	bed INTEGER,
-	bath INTEGER,
+	price INTEGER NOT NULL,
+	square_feet INTEGER NOT NULL,
+	bed INTEGER NOT NULL,
+	bath INTEGER NOT NULL,
 	scrape_timestamp TIMESTAMP NOT NULL
 );
