@@ -6,5 +6,5 @@ CREATE TABLE users(
   email TEXT NOT NULL,
   phone_number BIGINT NOT NULL,
   carrier TEXT NOT NULL,
-  password TEXT NOT NULL  
+  password_hash TEXT NOT NULL  
 );
