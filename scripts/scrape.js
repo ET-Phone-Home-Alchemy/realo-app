@@ -78,6 +78,7 @@ for(page = 1; page <= 10; page++){
       }
 
       );
+
   }
 }
 
