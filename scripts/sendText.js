@@ -1,11 +1,15 @@
 const request = require('request');
 const nodemailer = require('nodemailer');
+const dotenv = require('dotenv');
 
+dotenv.config();
+const gmailPass = process.env.REALO_PASSWORD;
+  
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'realoapp@gmail.com',
-    pass: 'Alchemy2021'
+    pass: gmailPass
   }
 });
 
