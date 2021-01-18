@@ -18,6 +18,9 @@ jobs:
       env:
         CI: true
         DATABASE_URL: postgres://alchemy:alchemy@postgres:5432/alchemy
+<<<<<<< HEAD
         SALT_ROUNDS: 4
         APP_SECRET: olympus_jeeperson
 
+=======
+>>>>>>> e4ffc10e856e28dc6dfa0c63a4cfd0c594dbe5f8
