@@ -2,23 +2,24 @@ const fs = require('fs');
 const pool = require('../lib/utils/pool');
 const request = require('supertest');
 const app = require('../lib/app');
-//const UserService = require('../lib/services/UserService');
+const UserService = require('../lib/services/UserService');
 
 const agent = request.agent(app);
 
 describe('realo-app-backend routes', () => {
-  beforeEach(() => {
-    return pool.query(fs.readFileSync('./sql/filter.sql', 'utf-8'));
-  });
+  beforeEach(async() => {
+    await pool.query(fs.readFileSync('./sql/filter.sql', 'utf-8'));
 
-  afterAll(() => {
-    pool.end();
-  });
-
-  it('/POST add user filter', async() => {
+    await UserService.create({
+      email: 'test@test.com',
+      password: 'password',
+      name: 'Jon Arbuckle',
+      phoneNumber: '1235671234',
+      carrier: 'att'
+    });
 
     await agent
-      .post('/api/v1/auth/signup')
+      .post('/api/v1/auth/login')
       .send({
         email: 'test@test.com',
         password: 'password',
@@ -26,6 +27,13 @@ describe('realo-app-backend routes', () => {
         phoneNumber: '1235671234',
         carrier: 'att'
       });
+  });
+
+  afterAll(() => {
+    pool.end();
+  });
+
+  it('/POST add user filter', async() => {
 
     const res = await agent
       .post('/api/v1/filter')
@@ -42,8 +50,8 @@ describe('realo-app-backend routes', () => {
       });
 
     expect(res.body).toEqual({
-      filter_id: 1,
-      user_id: 1,
+      filterId: 1,
+      userId: 1,
       filterName: 'My first filter!',
       squareFeetMin: 0,
       squareFeetMax: 10000,
