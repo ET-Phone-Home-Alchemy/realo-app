@@ -1,0 +1,19 @@
+extends _layout.pug
+
+block content
+  p Add a new filter
+  form(action="")
+    input(type="text" placeholder="name of filter")
+    input(type="number" placeholder="sqft")
+    select
+      option(value="1") 1bed
+      option(value="2") 2bed
+    select
+      option(value="1") 1bath
+      option(value="2") 2bath
+    button Add Filter
+  h1 Filters
+  p Saved Filter 1
+  p Saved Filter 2
+  p Saved Filter 3
+  
