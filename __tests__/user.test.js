@@ -77,7 +77,7 @@ describe('realo-app-backend routes', () => {
       .post('/api/v1/auth/login')
       .send({
         email: 'test1@test.com',
-      password: 'password',
+        password: 'password',
       });
 
     const res = await agent 
