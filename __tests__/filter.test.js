@@ -2,8 +2,7 @@ const fs = require('fs');
 const pool = require('../lib/utils/pool');
 const request = require('supertest');
 const app = require('../lib/app');
-const UserService = require('../lib/services/UserService');
-
+//const UserService = require('../lib/services/UserService');
 
 const agent = request.agent(app);
 
@@ -19,14 +18,14 @@ describe('realo-app-backend routes', () => {
   it('/POST add user filter', async() => {
 
     await agent
-    .post('/api/v1/auth/signup')
-    .send({
-      email: 'test@test.com',
-      password: 'password',
-      name: 'Jon Arbuckle',
-      phoneNumber: '1235671234',
-      carrier: 'att'
-    });
+      .post('/api/v1/auth/signup')
+      .send({
+        email: 'test@test.com',
+        password: 'password',
+        name: 'Jon Arbuckle',
+        phoneNumber: '1235671234',
+        carrier: 'att'
+      });
 
     const res = await agent
       .post('/api/v1/filter')
@@ -53,7 +52,7 @@ describe('realo-app-backend routes', () => {
       bathMin: 0,
       bathMax: 8,
       priceMin: 0,
-      priceMax, 1000000
+      priceMax: 1000000
     });
   });
 
