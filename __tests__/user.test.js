@@ -93,4 +93,35 @@ describe('realo-app-backend routes', () => {
       carrier: 'att' 
     });
   });
+
+  it('/GET verify', async() => {
+    const user = await UserService.create({
+      email: 'test1@test.com',
+      password: 'password',
+      name: 'Joan Arbuckle',
+      phoneNumber: '1235679876',
+      carrier: 'att' 
+    }); 
+
+    const agent = request.agent(app);
+    
+    await agent
+      .post('/api/v1/auth/login')
+      .send({
+        email: 'test1@test.com',
+      password: 'password',
+      });
+
+    const res = await agent 
+      .get('/api/v1/auth/verify');
+
+    expect(res.body).toEqual({
+      userId: user.userId,
+      email: 'test1@test.com',
+      name: 'Joan Arbuckle',
+      phoneNumber: '1235679876',
+      carrier: 'att'
+    });
+  });
+
 });
