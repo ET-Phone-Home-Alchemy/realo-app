@@ -47,7 +47,11 @@ describe('realo-app-backend routes', () => {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   it('lets a user login on /POST', async() => {
+=======
+  it('/POST lets a user login', async() => {
+>>>>>>> 6d762453f1fe4f8c458dadda15d13607747376db
 =======
   it('/POST lets a user login', async() => {
 >>>>>>> 6d762453f1fe4f8c458dadda15d13607747376db
