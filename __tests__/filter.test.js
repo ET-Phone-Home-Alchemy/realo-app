@@ -148,4 +148,18 @@ describe('realo-app-backend routes', () => {
     expect(res.body).toEqual([filter.body, filter2.body, filter3.body]);
 
   });
+
+  it('/GET error message if no filters exist for user ID', async() => {
+
+
+    const res = await agent
+      .get('/api/v1/filter/1');
+
+    expect(res.body).toEqual({
+      message: 'No filters exist for user 1', 
+      status: 500
+    });
+
+  });
+
 });
