@@ -46,7 +46,7 @@ describe('realo-app-backend routes', () => {
   });
 
 
-  it('lets a user login on /POST', async() => {
+  it('/POST lets a user login', async() => {
 
     const res = await request(app)
       .post('/api/v1/auth/login')
