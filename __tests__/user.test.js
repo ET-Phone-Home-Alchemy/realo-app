@@ -46,7 +46,11 @@ describe('realo-app-backend routes', () => {
   });
 
 
+<<<<<<< HEAD
   it('lets a user login on /POST', async() => {
+=======
+  it('/POST lets a user login', async() => {
+>>>>>>> 6d762453f1fe4f8c458dadda15d13607747376db
 
     const res = await request(app)
       .post('/api/v1/auth/login')
@@ -65,13 +69,6 @@ describe('realo-app-backend routes', () => {
   });
 
   it('/GET verify', async() => {
-    const user = await UserService.create({
-      email: 'test1@test.com',
-      password: 'password',
-      name: 'Joan Arbuckle',
-      phoneNumber: '1235679876',
-      carrier: 'att' 
-    }); 
 
     const agent = request.agent(app);
     
