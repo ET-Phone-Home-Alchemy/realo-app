@@ -10,7 +10,7 @@ let user;
 
 describe('realo-app-backend routes', () => {
   beforeEach(async() => {
-    await pool.query(fs.readFileSync('./sql/auth.sql', 'utf-8'));
+    await pool.query(fs.readFileSync('./sql/user.sql', 'utf-8'));
 
     return user = await UserService.create({
       email: 'test1@test.com',
@@ -46,15 +46,7 @@ describe('realo-app-backend routes', () => {
   });
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  it('lets a user login on /POST', async() => {
-=======
   it('/POST lets a user login', async() => {
->>>>>>> 6d762453f1fe4f8c458dadda15d13607747376db
-=======
-  it('/POST lets a user login', async() => {
->>>>>>> 6d762453f1fe4f8c458dadda15d13607747376db
 
     const res = await request(app)
       .post('/api/v1/auth/login')
