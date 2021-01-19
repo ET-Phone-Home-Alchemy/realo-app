@@ -39,6 +39,7 @@
     "pug": "^3.0.0",
     "request": "^2.88.2",
     "superagent": "^6.1.0",
-    "superagent-throttle": "^1.0.1"
+    "superagent-throttle": "^1.0.1",
+    "twilio": "^3.55.0"
   }
 }

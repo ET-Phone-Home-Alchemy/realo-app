@@ -1,5 +1,8 @@
 extends _layout.pug
 
+block styles
+  include css/filters.css
+
 block content
   p Add a new filter
   form(action="")
@@ -12,8 +15,21 @@ block content
       option(value="1") 1bath
       option(value="2") 2bath
     button Add Filter
-  h1 Filters
-  p Saved Filter 1
-  p Saved Filter 2
-  p Saved Filter 3
+  h1 Saved Filters
+    ul
+      each filter in filters
+        li
+          span Name #{filter.filterName}, 
+          span sqft-min #{filter.squareFeetMin}, 
+          span sqft-max #{filter.squareFeetMax}, 
+          span bed-min #{filter.bedMin}, 
+          span bed-max #{filter.bedMax}, 
+          span bath-min #{filter.bathMin}, 
+          span bath-max #{filter.bathMax}, 
+          span price-min #{filter.priceMin}, 
+          span price-max #{filter.priceMax}, 
+          span userId #{filter.userId}
+          button Delete Filter
+  //- Example for another variable passed in, can delete later        
+  h1=listing
   
