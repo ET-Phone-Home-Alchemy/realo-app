@@ -13,7 +13,7 @@ describe('realo-app-backend routes', () => {
     await pool.query(fs.readFileSync('./sql/auth.sql', 'utf-8'));
 
     return user = await UserService.create({
-      email: 'test1@test.com',
+      email: 'realoapp@mail.com',
       password: 'password',
       name: 'Joan Arbuckle',
       phoneNumber: '1235679876',
