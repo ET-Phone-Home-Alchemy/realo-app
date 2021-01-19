@@ -65,13 +65,6 @@ describe('realo-app-backend routes', () => {
   });
 
   it('/GET verify', async() => {
-    const user = await UserService.create({
-      email: 'test1@test.com',
-      password: 'password',
-      name: 'Joan Arbuckle',
-      phoneNumber: '1235679876',
-      carrier: 'att' 
-    }); 
 
     const agent = request.agent(app);
     
