@@ -66,7 +66,6 @@ for(page = 1; page <= 10; page++){
               scrapeTimestamp: timeStamp
             };
 
-            console.log(listing);
             Listing.insert(listing);
           });
 
