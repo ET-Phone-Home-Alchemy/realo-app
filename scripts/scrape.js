@@ -1,8 +1,6 @@
 const Throttle = require('superagent-throttle');
 const request = require('superagent');
 const cheerio = require('cheerio');
-// const fs = require('fs');
-// const pool = require('../lib/utils/pool.js');
 const Listing = require('../lib/models/Listing.js');
 
 const throttle = new Throttle({ rate: 1, ratePer: 5000, concurrent: 1 });
@@ -75,7 +73,6 @@ for(page = 1; page <= 10; page++){
       }
 
       );
-
   }
 }
 
