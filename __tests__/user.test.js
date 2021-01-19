@@ -6,10 +6,19 @@ const UserService = require('../lib/services/UserService');
 
 
 const agent = request.agent(app);
+let user;
 
 describe('realo-app-backend routes', () => {
-  beforeEach(() => {
-    return pool.query(fs.readFileSync('./sql/auth.sql', 'utf-8'));
+  beforeEach(async() => {
+    await pool.query(fs.readFileSync('./sql/auth.sql', 'utf-8'));
+
+    return user = await UserService.create({
+      email: 'test1@test.com',
+      password: 'password',
+      name: 'Joan Arbuckle',
+      phoneNumber: '1235679876',
+      carrier: 'att'
+    });
   });
 
   afterAll(() => {
@@ -38,13 +47,6 @@ describe('realo-app-backend routes', () => {
 
 
   it('lets a user login on /POST', async() => {
-    const user = await UserService.create({
-      email: 'test1@test.com',
-      password: 'password',
-      name: 'Joan Arbuckle',
-      phoneNumber: '1235679876',
-      carrier: 'att' 
-    }); 
 
     const res = await request(app)
       .post('/api/v1/auth/login')
@@ -63,13 +65,6 @@ describe('realo-app-backend routes', () => {
   });
 
   it('/GET verify', async() => {
-    const user = await UserService.create({
-      email: 'test1@test.com',
-      password: 'password',
-      name: 'Joan Arbuckle',
-      phoneNumber: '1235679876',
-      carrier: 'att' 
-    }); 
 
     const agent = request.agent(app);
     
@@ -77,7 +72,7 @@ describe('realo-app-backend routes', () => {
       .post('/api/v1/auth/login')
       .send({
         email: 'test1@test.com',
-      password: 'password',
+        password: 'password'
       });
 
     const res = await agent 
