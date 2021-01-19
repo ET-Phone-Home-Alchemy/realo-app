@@ -99,7 +99,7 @@ describe('realo-app-backend routes', () => {
     });
   });
 
-  it.only('/GET return all filters by user ID', async() => {
+  it('/GET return all filters by user ID', async() => {
 
     const filter = await agent
       .post('/api/v1/filter')
