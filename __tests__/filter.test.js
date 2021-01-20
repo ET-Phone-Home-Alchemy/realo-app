@@ -11,7 +11,6 @@ describe('realo-app-backend routes', () => {
     await pool.query(fs.readFileSync('./sql/user.sql', 'utf-8'));
     await pool.query(fs.readFileSync('./sql/filter.sql', 'utf-8'));
 
-
     await UserService.create({
       email: 'test@test.com',
       password: 'password',
@@ -36,7 +35,6 @@ describe('realo-app-backend routes', () => {
   });
 
   it('/POST add user filter', async() => {
-
     const res = await agent
       .post('/api/v1/filter')
       .send({
@@ -67,7 +65,6 @@ describe('realo-app-backend routes', () => {
   });
 
   it('/DELETE remove user filter by id', async() => {
-
     const filter = await agent
       .post('/api/v1/filter')
       .send({
@@ -89,7 +86,6 @@ describe('realo-app-backend routes', () => {
   });
 
   it('/DELETE throw error if filter id does not exist', async() => {
-
     const res = await agent
       .delete('/api/v1/filter/1');
 
@@ -100,7 +96,6 @@ describe('realo-app-backend routes', () => {
   });
 
   it('/GET return all filters by user ID', async() => {
-
     const filter = await agent
       .post('/api/v1/filter')
       .send({
@@ -147,20 +142,12 @@ describe('realo-app-backend routes', () => {
       .get(`/api/v1/filter/${filter.body.userId}`);
 
     expect(res.body).toEqual([filter.body, filter2.body, filter3.body]);
-
   });
 
   it('/GET error message if no filters exist for user ID', async() => {
-
-
     const res = await agent
       .get('/api/v1/filter/1');
 
-    expect(res.body).toEqual({
-      message: 'No filters exist for user 1', 
-      status: 500
-    });
-
+    expect(res.body).toEqual([]);
   });
-
 });
