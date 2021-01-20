@@ -1,8 +1,13 @@
-const Filter = require('../../lib/models/Filter')
 
-const deleteFilter = document.getElementById('delete-filter')
+const deleteFilter = document.querySelectorAll('.delete-button')
 
 
-deleteFilter.addEventListener('click', (filterId, userId) => {
-  await Filter.remove(filterId, userId);
-})
+deleteFilter.forEach(button => button.addEventListener('click', (event) => {
+  // await Filter.remove(filterId, userId);
+  console.log(event.target.id);
+  fetch(`/api/v1/filter/${event.target.id}`, {
+    method: 'delete',
+    credentials: 'include'
+  })
+  .then(() => window.location='/filters');
+}));
