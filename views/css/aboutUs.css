@@ -1,3 +1,14 @@
+ul {
+  list-style-type: none;
+  display: block;
+}
+
 span {
+  font-size: large;
   font-weight: bolder;
+}
+
+p {
+  font-size: smaller;
+  font-weight: normal;
 }
