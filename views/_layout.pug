@@ -9,9 +9,13 @@ html(lang="en")
       block styles
   body
     header
-      h1 REALO
+      h1#title REALO
+      button#logInButton LogIn
       nav
         a(href="/") Home
         a(href="/filters") Filters
         a(href="/about-us") About Us
     block content
+
+script
+  include js/header.js
