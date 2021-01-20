@@ -9,8 +9,8 @@ block content
     input(type="text" placeholder="name of filter")
     input(type="number" placeholder="sqft")
     select
-      option(value="1") 1bed
-      option(value="2") 2bed
+      option(value="1") 1 bed
+      option(value="2") 2 bed
     select
       option(value="1") 1bath
       option(value="2") 2bath
@@ -29,7 +29,10 @@ block content
           span price-min #{filter.priceMin}, 
           span price-max #{filter.priceMax}, 
           span userId #{filter.userId}
-          button Delete Filter
+          button.delete-button(id=filter.filterId) Delete Filter #{filter.filterId}
   //- Example for another variable passed in, can delete later        
   h1=listing
+
+  script
+    include js/filters.js
   
