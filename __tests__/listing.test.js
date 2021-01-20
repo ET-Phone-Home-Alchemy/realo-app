@@ -13,6 +13,7 @@ describe('realo-app-backend routes', () => {
   beforeEach(async() => {
     await pool.query(fs.readFileSync('./sql/user.sql', 'utf-8'));
     await pool.query(fs.readFileSync('./sql/filter.sql', 'utf-8'));
+    await pool.query(fs.readFileSync('./sql/scrape.sql', 'utf-8'));
 
 
     await UserService.create({
