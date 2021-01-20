@@ -5,16 +5,61 @@ block styles
 
 block content
   p Add a new filter
-  form(action="")
-    input(type="text" placeholder="name of filter")
-    input(type="number" placeholder="sqft")
-    select
-      option(value="1") 1 bed
-      option(value="2") 2 bed
-    select
-      option(value="1") 1bath
-      option(value="2") 2bath
-    button Add Filter
+  form(id="add-filter" action="/api/v1/filter" method="post")
+    input(type="text" name="filterName" placeholder="name of filter" required)
+    input(type="number" name="squareFeetMin" placeholder="sqft-minimum" required)
+    input(type="number" name="squareFeetMax" placeholder="sqft-maximum" required)
+    label bed-min
+      select(name="bedMin") 
+        option(value="1") 1 bed
+        option(value="2") 2 bed
+        option(value="3") 3 bed
+        option(value="4") 4 bed
+        option(value="5") 5 bed
+        option(value="6") 6 bed
+        option(value="7") 7 bed
+        option(value="8") 8 bed
+        option(value="9") 9 bed
+        option(value="10") 10 bed
+    label bed-max
+      select(name="bedMax")
+        option(value="1") 1 bed
+        option(value="2") 2 bed
+        option(value="3") 3 bed
+        option(value="4") 4 bed
+        option(value="5") 5 bed
+        option(value="6") 6 bed
+        option(value="7") 7 bed
+        option(value="8") 8 bed
+        option(value="9") 9 bed
+        option(value="10") 10 bed
+    label bath-min
+      select(name="bathMin")
+        option(value="1") 1 bed
+        option(value="2") 2 bed
+        option(value="3") 3 bed
+        option(value="4") 4 bed
+        option(value="5") 5 bed
+        option(value="6") 6 bed
+        option(value="7") 7 bed
+        option(value="8") 8 bed
+        option(value="9") 9 bed
+        option(value="10") 10 bed
+    label bath-max
+      select(name="bathMax")
+        option(value="1") 1bath
+        option(value="2") 2bath
+        option(value="3") 3bath
+        option(value="4") 4bath
+        option(value="5") 5bath
+        option(value="6") 6bath
+        option(value="7") 7bath
+        option(value="8") 8bath
+        option(value="9") 9bath
+        option(value="10") 10bath
+    input(type="number" name="priceMin" placeholder="price-minimum" required)
+    input(type="number" name="priceMax" placeholder="price-maximum" required)
+    button#submitButton Add Filter
   h1 Saved Filters
     ul
       each filter in filters
