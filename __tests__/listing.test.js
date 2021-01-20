@@ -122,4 +122,28 @@ describe('realo-app-backend routes', () => {
     ]);
   });
 
+  it('get latest timestamp from database', async() => {
+
+    const newListing = {
+      id: '123456789', 
+      source: 'Zillow', 
+      address: 'test lane Portland OR 97210', 
+      link: 'https://www.zillow.com/homedetails/6430-N-Montana-Ave-Portland-OR-97217/53938559_zpid/', 
+      price: '10', 
+      squareFeet: '1', 
+      bed: '1', 
+      bath: '1', 
+      scrapeTimestamp: new Date()
+    };
+
+
+    await Listing.insert(newListing);
+
+    const res = await Listing.latestTime();
+
+    await Listing.remove('123456789');
+
+    expect(res).toEqual(newListing.scrapeTimestamp);
+  });
+
 });
