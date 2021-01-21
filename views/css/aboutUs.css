@@ -3,17 +3,21 @@
   border: 2px solid black;
   padding: 10px;
   display: block;
+  overflow: auto;
+}
+
+.bio-card-text {
+  display: block;
 }
 
 ul {
   list-style-type: none;
-  display: block;
 }
 
 .bio-card_image {
   margin-right: 15px;
   border-radius: 50%;
-  max-width: 180 px;
+  max-width: 180px;
   height: auto;
   float: left;
 }
