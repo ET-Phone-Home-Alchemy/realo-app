@@ -1,6 +1,5 @@
 .bio-card {
   width: 60%;
-<<<<<<< HEAD
   padding: 10px;
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -14,7 +13,6 @@
   max-width: 180px;
   height: 180px;
   float: left;
-=======
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: repeat(4, 100px);
@@ -57,7 +55,6 @@ ul {
 ul {
   list-style-type: none;
   padding: 0;
->>>>>>> 7e205b275df624e074ca48b32055d966ee166dd4
 }
 
 ul {
