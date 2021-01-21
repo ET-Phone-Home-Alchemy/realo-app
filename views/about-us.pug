@@ -4,14 +4,9 @@ block styles
   include css/aboutUs.css
 
 block content
-<<<<<<< HEAD
   nav
     a(href="/") Home
     br
-  mixin bio(name, picture='http://placekitten.com/150/150')
-    .bio-card
-      img.bio-card-image(src=picture, alt=name)
-=======
   mixin bio(name, picture, linkedin, github)
     .bio-card
       img.bio-card-image(src=picture, alt=name)
@@ -20,7 +15,6 @@ block content
           img.linkedin-image(src='https://img.icons8.com/ios/50/000000/linkedin.png', alt='linkedin')
         a(href=github)
           img.github-image(src='https://img.icons8.com/ios/50/000000/github.png', alt='github')
->>>>>>> 7e205b275df624e074ca48b32055d966ee166dd4
       .bio-card-text
         h3= name
         block
@@ -39,20 +33,10 @@ block content
   +bio('Erik Graciosa', '/erik.jpg', 'https://www.linkedin.com/in/erikgraciosa/', 'https://github.com/ErikGraciosa')
     +questions('Mount Tabor', 'After a career in Mechanical Engineering working on projects in automation inkjet printing, 3D printing, material handling, and labgrown-diamonds, now pursuing the new problem domain of Software Engineering.', 'Server side rendering using PUG and cookie management with redirects using default html form functionalities as well as the express endpoint middlewear to write to a postgres database were the highlights of this project.')
   +bio('Jeff Irvine', 'http://placekitten.com/200/200', 'https://www.linkedin.com/in/irvinejeff/', 'https://github.com/jeffIrvine')
-    +questions('blah', 'blah', 'blah')
-<<<<<<< HEAD
-  +bio('Jeff Irvine')
-    +questions('blah', 'blah', 'blah')
-  +bio('Sydney James', '/sydney.jpg')
-    +questions('Irvington', 'In my past life I worked in the wine industry and in hospitality as a sales and event manager. I found coding through a desire to solve problems and challenge myself to do something HARD. In my free time I\'m an avid home cook, house project-doer, and not-musically-inclined karaoke queen.', 'Successful scraping and using nodemailer.') 
-  nav
-    a(href="/") Home
-    br
-=======
+    +questions('Woodlawn', 'Most recently I was an operations manager and co-founder of a small start up. After so many years of sales and management I was very tired of the hypebeast sales pitches and metrics over people style of people management.(If you could go ahead and just do your job... that\'d be great.) Enter software development, people centered with a focus on communication and problem solving.   ', 'Cheerio scraping Zillow and PugPugPug')
   +bio('Sydney James', '/sydney.jpg', 'https://www.linkedin.com/in/sydjames/', 'https://github.com/scjam')
     +questions('Overlook', 'In my past life I worked in the wine industry and in hospitality as a sales and event manager. I found coding through a desire to solve problems and challenge myself to do something HARD. In my free time I\'m an avid home cook, house project-doer, and not-musically-inclined karaoke queen.', 'Successful scraping and becoming a pug convert.') 
   nav
     a(href="/") Home
     br
 
->>>>>>> 7e205b275df624e074ca48b32055d966ee166dd4
