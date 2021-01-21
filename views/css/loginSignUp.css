@@ -4,3 +4,8 @@ input {
   margin: 4px 0;
   box-sizing: border-box;
 }
+
+#login-form,
+button {
+  text-align: center;
+}
