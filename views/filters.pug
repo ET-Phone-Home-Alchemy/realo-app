@@ -1,0 +1,85 @@
+extends _layout.pug
+
+block styles
+  include css/filters.css
+
+block content
+  button#logoutButton Logout
+  p Add a new filter
+  form(id="add-filter" action="/api/v1/filter" method="post")
+    input(type="text" name="filterName" placeholder="name of filter" required)
+    input(type="number" name="squareFeetMin" placeholder="sqft-minimum" required)
+    input(type="number" name="squareFeetMax" placeholder="sqft-maximum" required)
+    label bed-min
+      select(name="bedMin") 
+        option(value="1") 1 bed
+        option(value="2") 2 bed
+        option(value="3") 3 bed
+        option(value="4") 4 bed
+        option(value="5") 5 bed
+        option(value="6") 6 bed
+        option(value="7") 7 bed
+        option(value="8") 8 bed
+        option(value="9") 9 bed
+        option(value="10") 10 bed
+    label bed-max
+      select(name="bedMax")
+        option(value="1") 1 bed
+        option(value="2") 2 bed
+        option(value="3") 3 bed
+        option(value="4") 4 bed
+        option(value="5") 5 bed
+        option(value="6") 6 bed
+        option(value="7") 7 bed
+        option(value="8") 8 bed
+        option(value="9") 9 bed
+        option(value="10") 10 bed
+    label bath-min
+      select(name="bathMin")
+        option(value="1") 1 bed
+        option(value="2") 2 bed
+        option(value="3") 3 bed
+        option(value="4") 4 bed
+        option(value="5") 5 bed
+        option(value="6") 6 bed
+        option(value="7") 7 bed
+        option(value="8") 8 bed
+        option(value="9") 9 bed
+        option(value="10") 10 bed
+    label bath-max
+      select(name="bathMax")
+        option(value="1") 1bath
+        option(value="2") 2bath
+        option(value="3") 3bath
+        option(value="4") 4bath
+        option(value="5") 5bath
+        option(value="6") 6bath
+        option(value="7") 7bath
+        option(value="8") 8bath
+        option(value="9") 9bath
+        option(value="10") 10bath
+    input(type="number" name="priceMin" placeholder="price-minimum" required)
+    input(type="number" name="priceMax" placeholder="price-maximum" required)
+    button#submitButton Add Filter
+  h1 Saved Filters
+    ul
+      each filter in filters
+        li
+          span Name #{filter.filterName}, 
+          span sqft-min #{filter.squareFeetMin}, 
+          span sqft-max #{filter.squareFeetMax}, 
+          span bed-min #{filter.bedMin}, 
+          span bed-max #{filter.bedMax}, 
+          span bath-min #{filter.bathMin}, 
+          span bath-max #{filter.bathMax}, 
+          span price-min #{filter.priceMin}, 
+          span price-max #{filter.priceMax}, 
+          span userId #{filter.userId}
+          button.delete-button(id=filter.filterId) Delete Filter #{filter.filterId}
+  //- Example for another variable passed in, can delete later        
+  h1=listing
+
+  script
+    include js/filters.js
+    include js/buttonLogic.js
+  
