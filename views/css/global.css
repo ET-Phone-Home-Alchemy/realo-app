@@ -57,7 +57,6 @@ color: #000000;
 text-align: center;
 transition: all 0.2s;
   }
-
 .button1:hover{
 color:#ffffff;
 background-color:#202020;
@@ -69,6 +68,7 @@ background-color:#202020;
   margin:0.4em auto;
   }
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -102,3 +102,5 @@ background-color:#202020;
  }
 
 >>>>>>> 7e205b275df624e074ca48b32055d966ee166dd4
+=======
+>>>>>>> bd0d4ee4ee77e63e442e5790506ce6a18d792fc1
