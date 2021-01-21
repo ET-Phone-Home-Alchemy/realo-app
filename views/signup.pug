@@ -4,16 +4,6 @@ block content
   nav
   a(href="/about-us") About Us
   br
-<<<<<<< HEAD
-  form(id="signUp" action="/api/v1/auth/signup" method="post")
-    input(type="text", name="name", value="", placeholder="Name")
-    br
-    input(type="text", name="email", value="", placeholder="email")
-    br
-    input(type="password", name="password", value="", placeholder="Password")
-    br
-    input(type="text", name="phoneNumber", value="", placeholder="Phone Number")
-=======
   div Enter credentials below to access the home filter builder and enable text messages based on matching filters.
   br
   form(id="signUp" action="/api/v1/auth/signup" method="post")
@@ -24,18 +14,10 @@ block content
     input(type="password", name="password", value="", placeholder="Password" required)
     br
     input(type="text", name="phoneNumber", value="", placeholder="Phone Number" required)
->>>>>>> 7e205b275df624e074ca48b32055d966ee166dd4
     br
     select(name="carrier")
       each carrier in carriers
         option(value=carrier)= carrier
     br
-<<<<<<< HEAD
     button#submitButton Submit
-=======
-    button#submitButton Submit
-<<<<<<< HEAD
 
->>>>>>> 7e205b275df624e074ca48b32055d966ee166dd4
-=======
->>>>>>> bd0d4ee4ee77e63e442e5790506ce6a18d792fc1
