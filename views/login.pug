@@ -1,0 +1,9 @@
+extends _layout.pug
+
+block content
+  form(id="login" action="/api/v1/auth/login" method="post")
+    input(type="text", name="email", value="", placeholder="email")
+    br
+    input(type="password", name="password", value="", placeholder="Password")
+    br
+    button#loginSubmitButton Submit
