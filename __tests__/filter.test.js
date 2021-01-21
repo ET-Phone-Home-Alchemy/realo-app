@@ -49,19 +49,7 @@ describe('realo-app-backend routes', () => {
         priceMax: 1000000
       });
 
-    expect(res.body).toEqual({
-      filterId: '1',
-      userId: '1',
-      filterName: 'My first filter!',
-      squareFeetMin: '0',
-      squareFeetMax: '10000',
-      bedMin: '0',
-      bedMax: '7',
-      bathMin: '0',
-      bathMax: '8',
-      priceMin: '0',
-      priceMax: '1000000'
-    });
+    expect(res.statusCode).toEqual(302);
   });
 
   it('/DELETE remove user filter by id', async() => {
@@ -80,9 +68,20 @@ describe('realo-app-backend routes', () => {
       });
 
     const res = await agent
-      .delete(`/api/v1/filter/${filter.body.userId}`);
+      .delete(`/api/v1/filter/1`);
 
-    expect(res.body).toEqual(filter.body);
+    expect(res.body).toEqual({
+      filterId: 1,
+      filterName: 'My first filter!',
+      squareFeetMin: 0,
+      squareFeetMax: 10000,
+      bedMin: 0,
+      bedMax: 7,
+      bathMin: 0,
+      bathMax: 8,
+      priceMin: 0,
+      priceMax: 1000000
+    });
   });
 
   it('/DELETE throw error if filter id does not exist', async() => {
