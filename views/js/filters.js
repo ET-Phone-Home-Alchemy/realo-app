@@ -1,6 +1,4 @@
-
-const deleteFilter = document.querySelectorAll('.delete-button')
-
+const deleteFilter = document.querySelectorAll('.delete-button');
 
 deleteFilter.forEach(button => button.addEventListener('click', (event) => {
   // await Filter.remove(filterId, userId);
@@ -9,5 +7,5 @@ deleteFilter.forEach(button => button.addEventListener('click', (event) => {
     method: 'delete',
     credentials: 'include'
   })
-  .then(() => window.location='/filters');
+    .then(() => window.location = '/filters');
 }));
