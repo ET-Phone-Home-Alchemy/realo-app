@@ -5,7 +5,6 @@ const app = require('../lib/app');
 const UserService = require('../lib/services/UserService');
 const Listing = require('../lib/models/Listing.js');
 
-
 const agent1 = request.agent(app);
 const agent2 = request.agent(app);
 
@@ -14,7 +13,6 @@ describe('realo-app-backend routes', () => {
     await pool.query(fs.readFileSync('./sql/user.sql', 'utf-8'));
     await pool.query(fs.readFileSync('./sql/filter.sql', 'utf-8'));
     await pool.query(fs.readFileSync('./sql/scrape.sql', 'utf-8'));
-
 
     await UserService.create({
       email: 'test@test.com',
@@ -83,12 +81,10 @@ describe('realo-app-backend routes', () => {
   });
 
   afterAll(() => {
-
     pool.end();
   });
 
   it('latest listings with corresponding matching filters and owners directly from model', async() => {
-
     const newListing = {
       id: '123456789', 
       source: 'Zillow', 
@@ -100,7 +96,6 @@ describe('realo-app-backend routes', () => {
       bath: '1', 
       scrapeTimestamp: new Date()
     };
-
 
     await Listing.insert(newListing);
 
@@ -123,7 +118,6 @@ describe('realo-app-backend routes', () => {
   });
 
   it('get latest timestamp from database', async() => {
-
     const newListing = {
       id: '123456789', 
       source: 'Zillow', 
@@ -136,7 +130,6 @@ describe('realo-app-backend routes', () => {
       scrapeTimestamp: new Date()
     };
 
-
     await Listing.insert(newListing);
 
     const res = await Listing.latestTime();
@@ -145,5 +138,4 @@ describe('realo-app-backend routes', () => {
 
     expect(res).toEqual(newListing.scrapeTimestamp);
   });
-
 });

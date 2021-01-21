@@ -71,16 +71,17 @@ describe('realo-app-backend routes', () => {
       .delete(`/api/v1/filter/1`);
 
     expect(res.body).toEqual({
-      filterId: 1,
+      userId: '1',
+      filterId: '1',
       filterName: 'My first filter!',
-      squareFeetMin: 0,
-      squareFeetMax: 10000,
-      bedMin: 0,
-      bedMax: 7,
-      bathMin: 0,
-      bathMax: 8,
-      priceMin: 0,
-      priceMax: 1000000
+      squareFeetMin: '0',
+      squareFeetMax: '10000',
+      bedMin: '0',
+      bedMax: '7',
+      bathMin: '0',
+      bathMax: '8',
+      priceMin: '0',
+      priceMax: '1000000'
     });
   });
 
@@ -138,9 +139,47 @@ describe('realo-app-backend routes', () => {
       });
 
     const res = await agent
-      .get(`/api/v1/filter/${filter.body.userId}`);
+      .get(`/api/v1/filter/1`);
 
-    expect(res.body).toEqual([filter.body, filter2.body, filter3.body]);
+    expect(res.body).toEqual([{
+      userId: '1',
+      filterId: '1',
+      filterName: 'My first filter!',
+      squareFeetMin: '0',
+      squareFeetMax: '10000',
+      bedMin: '0',
+      bedMax: '7',
+      bathMin: '0',
+      bathMax: '8',
+      priceMin: '0',
+      priceMax: '1000000'
+    }, 
+    {
+      userId: '1',
+      filterId: '2',
+      filterName: 'My second filter!',
+      squareFeetMin: '0',
+      squareFeetMax: '10000',
+      bedMin: '0',
+      bedMax: '7',
+      bathMin: '0',
+      bathMax: '8',
+      priceMin: '0',
+      priceMax: '1000000'
+    }, 
+    {
+      userId: '1',
+      filterId: '3',
+      filterName: 'My third filter!',
+      squareFeetMin: '0',
+      squareFeetMax: '10000',
+      bedMin: '0',
+      bedMax: '7',
+      bathMin: '0',
+      bathMax: '8',
+      priceMin: '0',
+      priceMax: '1000000'
+    }]);
   });
 
   it('/GET error message if no filters exist for user ID', async() => {

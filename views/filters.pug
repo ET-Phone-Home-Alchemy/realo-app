@@ -4,6 +4,7 @@ block styles
   include css/filters.css
 
 block content
+  button#logoutButton Logout
   p Add a new filter
   form(id="add-filter" action="/api/v1/filter" method="post")
     input(type="text" name="filterName" placeholder="name of filter" required)
@@ -80,4 +81,5 @@ block content
 
   script
     include js/filters.js
+    include js/buttonLogic.js
   
