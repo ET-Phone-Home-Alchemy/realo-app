@@ -48,13 +48,7 @@ describe('realo-app-backend routes', () => {
         password: 'password'
       });
 
-    expect(res.body).toEqual({
-      userId: user.userId,
-      email: 'test1@test.com',
-      name: 'Joan Arbuckle',
-      phoneNumber: '1235679876',
-      carrier: 'att' 
-    });
+    expect(res.status).toEqual(302);
   });
 
   it('/GET verify', async() => {
