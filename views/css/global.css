@@ -20,11 +20,13 @@ header {
   align-items: center;
 }
 
+
 .subheader {
   display: block;
   font-size: 75%;
   opacity: 0.8;
 }
+
 
 #homeLinks {
   padding: 40px;
@@ -60,3 +62,7 @@ background-color:#202020;
   margin:0.4em auto;
   }
  }
+<<<<<<< HEAD
+=======
+
+>>>>>>> fa09da3dbe9201745c0fb67f3522beb2852312c2
