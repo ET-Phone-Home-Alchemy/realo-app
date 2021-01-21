@@ -3,39 +3,56 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-<<<<<<< HEAD
   background-color: #ffffff;
-=======
   font-family: Helvetica, Arial, sans-serif;
->>>>>>> 7e205b275df624e074ca48b32055d966ee166dd4
+}
+
+a:link {
+  color: #1d3557;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #457b9d;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 header {
+  padding-top: 8%;
   display: flex;
   flex-direction: column;
   justify-content: right;
   align-items: center;
 }
 
-#title {
+.title {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 4px;
 }
-
 
 .subheader {
   display: block;
   font-size: 75%;
   opacity: 0.8;
+  margin-top: -16px;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 =======
 >>>>>>> 7e205b275df624e074ca48b32055d966ee166dd4
 #homeLinks {
+=======
+#home-links {
+>>>>>>> 7876fd1c747c2ffa739ac003b1d872245d129279
   padding: 40px;
   display: flex;
   flex-direction: row;
@@ -44,29 +61,31 @@ header {
 }
 
 .button1 {
-display: inline-block;
-padding: 0.35em 1.2em;
-border: 0.1em solid #000000;
-margin: 0 0.3em 0.3em 0;
-border-radius: 0.12em;
-box-sizing: border-box;
-text-decoration: none;
-font-family: 'Roboto',sans-serif;
-font-weight: 300;
-color: #000000;
-text-align: center;
-transition: all 0.2s;
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #000000;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #000000;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.button1:hover {
+  color: #ffffff;
+  background-color: #202020;
+}
+
+@media all and (max-width: 30em) {
+  .button1 {
+    display: block;
+    margin: 0.4em auto;
   }
-.button1:hover{
-color:#ffffff;
-background-color:#202020;
-  }
-  @media all and (max-width:30em){
-   
-  .button1{
-  display:block;
-  margin:0.4em auto;
-  }
+<<<<<<< HEAD
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -104,3 +123,11 @@ background-color:#202020;
 >>>>>>> 7e205b275df624e074ca48b32055d966ee166dd4
 =======
 >>>>>>> bd0d4ee4ee77e63e442e5790506ce6a18d792fc1
+=======
+}
+
+.bottom-links {
+  align-items: baseline;
+  padding-bottom: 4%;
+}
+>>>>>>> 7876fd1c747c2ffa739ac003b1d872245d129279
