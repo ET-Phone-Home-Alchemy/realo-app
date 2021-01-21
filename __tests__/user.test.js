@@ -35,14 +35,7 @@ describe('realo-app-backend routes', () => {
         phoneNumber: '1235671234',
         carrier: 'att'
       });
-
-    expect(res.body).toEqual({
-      userId: expect.any(String),
-      email: 'test@test.com',
-      name: 'Jon Arbuckle',
-      phoneNumber: '1235671234',
-      carrier: 'att'
-    });
+    expect(res.statusCode).toEqual(302);
   });
 
 
@@ -55,13 +48,7 @@ describe('realo-app-backend routes', () => {
         password: 'password'
       });
 
-    expect(res.body).toEqual({
-      userId: user.userId,
-      email: 'test1@test.com',
-      name: 'Joan Arbuckle',
-      phoneNumber: '1235679876',
-      carrier: 'att' 
-    });
+    expect(res.status).toEqual(302);
   });
 
   it('/GET verify', async() => {

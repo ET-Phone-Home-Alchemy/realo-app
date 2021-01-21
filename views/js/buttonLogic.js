@@ -1,11 +1,11 @@
 const logoutButton = document.getElementById('logoutButton');
-const logInButton = document.getElementById('logInButton');
+const logInSubmitButton = document.getElementById('logInSubmitButton');
 
 logoutButton.addEventListener('click', () => {
-  window.location = '/';
+  window.location = '/logout';
 });
 
 
-logInButton.addEventListener('click', () => {
-  window.location = '/login';
+logInSubmitButton.addEventListener('click', () => {
+  window.location = '/filters';
 });
