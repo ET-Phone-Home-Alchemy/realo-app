@@ -86,21 +86,33 @@ block content
     input(type="number" name="priceMax" placeholder="price-maximum" required)
     button#submitButton Add Filter
   h1 Saved Filters
-    ul
-      each filter in filters
-        li
-          span Name #{filter.filterName}, 
-          span sqft-min #{filter.squareFeetMin}, 
-          span sqft-max #{filter.squareFeetMax}, 
-          span bed-min #{filter.bedMin}, 
-          span bed-max #{filter.bedMax}, 
-          span bath-min #{filter.bathMin}, 
-          span bath-max #{filter.bathMax}, 
-          span price-min #{filter.priceMin}, 
-          span price-max #{filter.priceMax}, 
-          span userId #{filter.userId}
-          button.delete-button(id=filter.filterId) Delete Filter #{filter.filterId}
- 
+    table(style='width:100%', border='1')
+      tr
+        th Filter Name
+        th Min SQFT
+        th Max SQFT
+        th Min Bed
+        th Max Bed
+        th Min Bath
+        th Max Bath
+        th Min Price
+        th Max Price
+        th
+      each filter in filters  
+        tr
+          td #{filter.filterName}
+          td #{filter.squareFeetMin} sqft
+          td #{filter.squareFeetMax} sqft
+          td #{filter.bedMin} bd
+          td #{filter.bedMax} bd
+          td #{filter.bathMin} ba
+          td #{filter.bathMax} ba
+          td $#{filter.priceMin}
+          td $#{filter.priceMax}
+          td
+            button.delete-button(id=filter.filterId) Delete Filter
+        
+  
   script
     include js/filters.js
     include js/buttonLogic.js
