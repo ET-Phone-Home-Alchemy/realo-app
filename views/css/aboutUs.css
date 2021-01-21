@@ -1,6 +1,8 @@
 .bio-card {
-  border: 2 px solid black;
-  padding: 20 px;
+  width: 60%;
+  border: 2px solid black;
+  padding: 10px;
+  display: block;
 }
 
 ul {
@@ -8,7 +10,8 @@ ul {
   display: block;
 }
 
-img {
+.bio-card_image {
+  margin-right: 15px;
   border-radius: 50%;
   max-width: 180 px;
   height: auto;
