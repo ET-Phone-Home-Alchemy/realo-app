@@ -4,49 +4,25 @@ block styles
   include css/aboutUs.css
 
 block content
-  mixin bio(name)
-    .bio
-      .bio-card
+  mixin bio(name, picture='http://placekitten.com/150/150')
+    .bio-card
+      img.bio-card_image(src=picture, alt=name)
+      .bio-card-text
         h3= name
         block
 
+  mixin questions(answer1, answer2, answer3)
+    .questions 
+      ul
+        li #[strong Favorite Portland Neighborhood?] #{answer1}
+        li #[strong What's Your Story?] #{answer2}
+        li #[strong Coolest Part of This Project?] #{answer3}
+
   +bio('Kevin Fiero')
-    //- img(src='http://placekitten.com/180/180' alt='kevin pic')
-    ul
-      li 
-        p #[strong Favorite Portland Neighborhood?] blah blah blah
-      li 
-        p #[strong What's Your Story?] blah blah blah
-      li 
-        p #[strong Coolest Part of This Project?] blah blah blah
-
+    +questions('blah', 'blah', 'blah')
   +bio('Erik Graciosa')
-    //- img(src='http://placekitten.com/180/180' alt='erik pic')
-    ul
-      li 
-        p #[strong Favorite Portland Neighborhood?] blah blah blah
-      li 
-        p #[strong What's Your Story?] blah blah blah
-      li 
-        p #[strong Coolest Part of This Project?] blah blah blah
-
+    +questions('blah', 'blah', 'blah')
   +bio('Jeff Irvine')
-    //- img(src='http://placekitten.com/180/180' alt='jeff pic')
-    ul
-      li 
-        p #[strong Favorite Portland Neighborhood?] blah blah blah
-      li 
-        p #[strong What's Your Story?] blah blah blah
-      li 
-        p #[strong Coolest Part of This Project?] blah blah blah
-
-  +bio('Sydney James')
-    //- img(src='http://placekitten.com/180/180' alt='sydney pic')
-    ul
-      li 
-        p #[strong Favorite Portland Neighborhood?] Irvington
-      li 
-        p #[strong What's Your Story?] In my past life I worked in the wine industry and in hospitality as a sales and event manager. I found coding through a desire to solve problems and challenge myself to do something HARD. In my free time I'm an avid home cook, house project-doer, and not-musically-inclined karaoke queen.
-      li 
-        p #[strong Coolest Part of This Project?] Successful scraping and using nodemailer.
-  
+    +questions('blah', 'blah', 'blah')
+  +bio('Sydney James', '/sydney.jpg')
+    +questions('Irvington', 'In my past life I worked in the wine industry and in hospitality as a sales and event manager. I found coding through a desire to solve problems and challenge myself to do something HARD. In my free time I\'m an avid home cook, house project-doer, and not-musically-inclined karaoke queen.', 'Successful scraping and using nodemailer.') 
