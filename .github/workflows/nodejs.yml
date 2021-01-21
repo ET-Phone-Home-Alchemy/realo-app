@@ -21,3 +21,4 @@ jobs:
           SALT_ROUNDS: 4
           APP_SECRET: olympus_jeeperson
           REALO_PASSWORD: Alchemy2021
+          REALO_DOMAIN: localhost
