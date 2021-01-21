@@ -4,6 +4,9 @@ block styles
   include css/aboutUs.css
 
 block content
+  nav
+    a(href="/") Home
+    br
   mixin bio(name, picture='http://placekitten.com/150/150')
     .bio-card
       img.bio-card-image(src=picture, alt=name)
@@ -26,3 +29,6 @@ block content
     +questions('blah', 'blah', 'blah')
   +bio('Sydney James', '/sydney.jpg')
     +questions('Irvington', 'In my past life I worked in the wine industry and in hospitality as a sales and event manager. I found coding through a desire to solve problems and challenge myself to do something HARD. In my free time I\'m an avid home cook, house project-doer, and not-musically-inclined karaoke queen.', 'Successful scraping and using nodemailer.') 
+  nav
+    a(href="/") Home
+    br
