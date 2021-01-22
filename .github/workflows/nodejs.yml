@@ -20,6 +20,5 @@ jobs:
           DATABASE_URL: postgres://alchemy:alchemy@postgres:5432/alchemy
           SALT_ROUNDS: 4
           APP_SECRET: olympus_jeeperson
-          REALO_PASSWORD: Alchemy2021
+          REALO_PASSWORD: Alchemy456
           REALO_DOMAIN: localhost
-
