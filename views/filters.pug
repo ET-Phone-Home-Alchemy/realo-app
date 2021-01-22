@@ -14,78 +14,18 @@ block content
     input(type="text" name="filterName" placeholder="name of filter" required)
     input(type="number" name="squareFeetMin" placeholder="sqft-minimum" required)
     input(type="number" name="squareFeetMax" placeholder="sqft-maximum" required)
+    mixin numbers(name)
+      select(name=name)
+        each val in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+          option(value=val)= val
     label Min Beds
-      select(name="bedMin") 
-        option(value="0") 0
-        option(value="1") 1
-        option(value="2") 2
-        option(value="3") 3
-        option(value="4") 4
-        option(value="5") 5
-        option(value="6") 6
-        option(value="7") 7
-        option(value="8") 8
-        option(value="9") 9
-        option(value="10") 10
-        option(value="11") 11
-        option(value="12") 12
-        option(value="13") 13
-        option(value="14") 14
-        option(value="15") 15
+      +numbers('bedMin')
     label Max Beds
-      select(name="bedMax")
-        option(value="0") 0
-        option(value="1") 1
-        option(value="2") 2
-        option(value="3") 3
-        option(value="4") 4
-        option(value="5") 5
-        option(value="6") 6
-        option(value="7") 7
-        option(value="8") 8
-        option(value="9") 9
-        option(value="10") 10
-        option(value="11") 11
-        option(value="12") 12
-        option(value="13") 13
-        option(value="14") 14
-        option(value="15") 15
+      +numbers('bedMax')
     label Min Baths
-      select(name="bathMin")
-        option(value="0") 0
-        option(value="1") 1
-        option(value="2") 2
-        option(value="3") 3
-        option(value="4") 4
-        option(value="5") 5
-        option(value="6") 6
-        option(value="7") 7
-        option(value="8") 8
-        option(value="9") 9
-        option(value="10") 10
-        option(value="11") 11
-        option(value="12") 12
-        option(value="13") 13
-        option(value="14") 14
-        option(value="15") 15
+      +numbers('bathMin')
     label Max Baths
-      select(name="bathMax")
-        option(value="0") 0
-        option(value="1") 1
-        option(value="2") 2
-        option(value="3") 3
-        option(value="4") 4
-        option(value="5") 5
-        option(value="6") 6
-        option(value="7") 7
-        option(value="8") 8
-        option(value="9") 9
-        option(value="10") 10
-        option(value="11") 11
-        option(value="12") 12
-        option(value="13") 13
-        option(value="14") 14
-        option(value="15") 15
+      +numbers('bathMax')
     input(type="number" name="priceMin" placeholder="price-minimum" required)
     input(type="number" name="priceMax" placeholder="price-maximum" required)
     button#submitButton Add Filter
