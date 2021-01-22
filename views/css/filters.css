@@ -1,5 +1,63 @@
+body {
+  text-align: center;
+}
+
+h3 {
+  margin-top: 2em;
+}
+
+.add-filter-form {
+  width: 70%;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  align-items: flex-start;
+  row-gap: 1em;
+}
+
+#filter-name {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  text-align: left;
+}
+
+#filter-price {
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+
+#filter-square-feet {
+  grid-column-start: 3;
+  grid-row-start: 1;
+}
+
+#filter-beds {
+  grid-column-start: 4;
+  grid-row-start: 1;
+}
+
+#filter-baths {
+  grid-column-start: 5;
+  grid-row-start: 1;
+}
+
+#filter-submit-button {
+  grid-column-start: 3;
+  grid-row-start: 3;
+}
+
+input {
+  margin-bottom: 1em;
+}
+
+select {
+  margin-bottom: 1em;
+}
+
 table {
   border-collapse: collapse;
+  margin-top: 1em;
 }
 
 tr {
@@ -16,6 +74,3 @@ td {
   font-size: 15px;
   text-align: center;
 }
-
-
-
