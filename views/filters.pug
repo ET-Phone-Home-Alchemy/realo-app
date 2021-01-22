@@ -4,13 +4,10 @@ block styles
   include css/filters.css
 
 block content
-  nav
-    a(href="/") Home
-    a(href="/about-us") About Us
-    br
-  button.button1#logoutButton  Logout
-  p Add a new filter
-  form(id="add-filter" action="/api/v1/filter" method="post")
+  button.styled-button#logout-button  Logout
+  
+  h3 Add A New Filter
+  form.add-filter-form(action="/api/v1/filter" method="POST")
     input(type="text" name="filterName" placeholder="name of filter" required)
     input(type="number" name="squareFeetMin" placeholder="sqft-minimum" required)
     input(type="number" name="squareFeetMax" placeholder="sqft-maximum" required)
@@ -28,8 +25,9 @@ block content
       +numbers('bathMax')
     input(type="number" name="priceMin" placeholder="price-minimum" required)
     input(type="number" name="priceMax" placeholder="price-maximum" required)
-    button#submitButton Add Filter
-  h1 Saved Filters
+    button#submit-button.styled-button Add Filter
+  
+  h3 Saved Filters
     table(style='width:100%', border='1')
       tr
         th Filter Name
@@ -55,7 +53,11 @@ block content
           td $#{filter.priceMax}
           td
             button.delete-button(id=filter.filterId) Delete Filter
-            
+  nav.bottom-links
+    a(href="/") Home 
+    br
+    a(href="/about-us") About Us
+
   script
     include js/filters.js
     include js/buttonLogic.js

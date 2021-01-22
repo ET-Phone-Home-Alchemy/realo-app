@@ -22,7 +22,4 @@ jobs:
           APP_SECRET: olympus_jeeperson
           REALO_PASSWORD: Alchemy2021
           REALO_DOMAIN: localhost
-<<<<<<< HEAD
-=======
 
->>>>>>> 70ea7d42fca14ab277282ddcea5c65316331c55f

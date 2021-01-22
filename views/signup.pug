@@ -1,9 +1,6 @@
 extends _layout.pug
 
 block content
-  nav
-  a(href="/about-us") About Us
-  br
   div Enter credentials below to access the home filter builder and enable text messages based on matching filters.
   br
   form(id="signUp" action="/api/v1/auth/signup" method="post")
@@ -19,12 +16,8 @@ block content
       each carrier in carriers
         option(value=carrier)= carrier
     br
-    button#submitButton Submit
-<<<<<<< HEAD
-<<<<<<< HEAD
+    button#submit-button Submit
 
-=======
->>>>>>> 70ea7d42fca14ab277282ddcea5c65316331c55f
-=======
+  nav.bottom-links
+    a(href="/about-us") About Us
 
->>>>>>> ba57b16f836a42731c5df9071bb9c92796f2d7ac
