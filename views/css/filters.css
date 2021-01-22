@@ -11,8 +11,9 @@ h3 {
   padding: 10px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   align-items: flex-start;
+  row-gap: 1em;
 }
 
 #filter-name {
@@ -43,7 +44,15 @@ h3 {
 
 #filter-submit-button {
   grid-column-start: 3;
-  grid-row-start: 4;
+  grid-row-start: 3;
+}
+
+input {
+  margin-bottom: 1em;
+}
+
+select {
+  margin-bottom: 1em;
 }
 
 table {
