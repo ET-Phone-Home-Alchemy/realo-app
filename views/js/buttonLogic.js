@@ -1,5 +1,5 @@
-const logoutButton = document.getElementById('logoutButton');
-const logInSubmitButton = document.getElementById('logInSubmitButton');
+const logoutButton = document.getElementById('logout-button');
+const logInSubmitButton = document.getElementById('login-submit-button');
 
 logoutButton.addEventListener('click', () => {
   fetch('/logout', {

@@ -35,6 +35,7 @@ header {
   justify-content: center;
   align-items: center;
   margin-top: 4px;
+  text-transform: uppercase;
 }
 
 .subheader {
@@ -44,7 +45,7 @@ header {
   margin-top: -16px;
 }
 
-#homeLinks {
+#home-links {
   padding: 40px;
   display: flex;
   flex-direction: row;
@@ -52,7 +53,7 @@ header {
   align-content: center;
 }
 
-.button1 {
+.styled-button {
   display: inline-block;
   padding: 0.35em 1.2em;
   border: 0.1em solid #000000;
@@ -67,24 +68,24 @@ header {
   transition: all 0.2s;
 }
 
-.button1:hover {
+.styled-button:hover {
   color: #ffffff;
   background-color: #202020;
 }
 
 @media all and (max-width: 30em) {
-  .button1 {
+  .styled-button {
     display: block;
     margin: 0.4em auto;
   }
 }
-.button1:hover {
+.styled-button:hover {
   color: #ffffff;
   background-color: #202020;
 }
 
 @media all and (max-width: 30em) {
-    .button1 {
+    .styled-button {
     display: block;
     margin: 0.4em auto;
   }
