@@ -8,24 +8,31 @@ block content
   
   h3 Add A New Filter
   form.add-filter-form(action="/api/v1/filter" method="POST")
-    input(type="text" name="filterName" placeholder="name of filter" required)
-    input(type="number" name="squareFeetMin" placeholder="sqft-minimum" required)
-    input(type="number" name="squareFeetMax" placeholder="sqft-maximum" required)
+    div#filter-name
+      input(type="text" name="filterName" placeholder="name of filter" required)
+    div#filter-price
+      input(type="number" name="priceMin" placeholder="price-minimum" required)
+      input(type="number" name="priceMax" placeholder="price-maximum" required)
+    div#filter-square-feet
+      input(type="number" name="squareFeetMin" placeholder="sqft-minimum" required)
+      input(type="number" name="squareFeetMax" placeholder="sqft-maximum" required)
     mixin numbers(name)
       select(name=name)
         each val in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
           option(value=val)= val
-    label Min Beds
-      +numbers('bedMin')
-    label Max Beds
-      +numbers('bedMax')
-    label Min Baths
-      +numbers('bathMin')
-    label Max Baths
-      +numbers('bathMax')
-    input(type="number" name="priceMin" placeholder="price-minimum" required)
-    input(type="number" name="priceMax" placeholder="price-maximum" required)
-    button#submit-button.styled-button Add Filter
+    div#filter-beds
+      label Min Beds
+        +numbers('bedMin')
+      br
+      label Max Beds
+        +numbers('bedMax')
+    div#filter-baths
+      label Min Baths
+        +numbers('bathMin')
+      br
+      label Max Baths
+        +numbers('bathMax')
+    button#filter-submit-button.styled-button Add Filter
   
   h3 Saved Filters
     table(style='width:100%', border='1')
