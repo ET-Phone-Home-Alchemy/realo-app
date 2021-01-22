@@ -7,11 +7,4 @@ logoutButton.addEventListener('click', () => {
     credentials: 'include'
   })
     .then(() => window.location = '/');
-
-  // window.location = '/logout';
-});
-
-
-logInSubmitButton.addEventListener('click', () => {
-  window.location = '/filters';
 });

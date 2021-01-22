@@ -3,6 +3,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #ffffff;
   font-family: Helvetica, Arial, sans-serif;
 }
 
@@ -43,7 +44,8 @@ header {
   margin-top: -16px;
 }
 
-#home-links {
+
+#homeLinks {
   padding: 40px;
   display: flex;
   flex-direction: row;
@@ -76,9 +78,20 @@ header {
     display: block;
     margin: 0.4em auto;
   }
+ }
+.button1:hover {
+  color: #ffffff;
+  background-color: #202020;
 }
+@media all and (max-width: 30em) {
+    .button1 {
+    display: block;
+    margin: 0.4em auto;
+  }
+ }
 
 .bottom-links {
   align-items: baseline;
   padding-bottom: 4%;
 }
+
