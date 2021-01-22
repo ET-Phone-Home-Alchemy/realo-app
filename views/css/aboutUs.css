@@ -3,21 +3,10 @@
   padding: 10px;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  overflow: hidden;
-  align-items: center;
-}
-
-.bio-card-image {
-  margin-right: 15px;
-  border-radius: 50%;
-  max-width: 180px;
-  height: 180px;
-  float: left;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
   grid-template-rows: repeat(4, 100px);
   overflow: hidden;
   align-items: center;
+  margin-top: 1em;
 }
 
 .bio-card-image {
@@ -27,9 +16,11 @@
   border-radius: 50%;
   max-width: 200px;
   height: 200px;
-  margin-top: 35px;
-  justify-self: center;
   float: left;
+  display: grid;
+  overflow: hidden;
+  justify-self: center;
+  margin-top: 0.8em;
 }
 
 .social-links {

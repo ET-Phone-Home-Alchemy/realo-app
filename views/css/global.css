@@ -82,6 +82,7 @@ header {
   color: #ffffff;
   background-color: #202020;
 }
+
 @media all and (max-width: 30em) {
     .button1 {
     display: block;
